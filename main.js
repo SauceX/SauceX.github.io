@@ -502,7 +502,7 @@ var ChartComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "ons-list{\r\n  margin-top: 10px;\r\n}\r\nons-list-header{\r\n  width: 100%;\r\n}\r\n.right-btn{\r\n  /*position: absolute;*/\r\n  /*top: 0;*/\r\n  /*right: 0;*/\r\n  /*margin-top: 5px;*/\r\n  /*margin-right: 15px;*/\r\n\r\n}\r\n.right-btn ons-fab{\r\n\r\n  font-size: 20px;\r\n}\r\n\r\n"
 
 /***/ }),
 
@@ -513,7 +513,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  config works!\n</p>\n"
+module.exports = "<ons-page>\n\n  <ons-toolbar>\n    <div class=\"center\">酱料偏好配置</div>\n  </ons-toolbar>\n\n  <ons-list modifier=\"inset\">\n    <ons-list-item style=\"background-color: #eee;\">智能设备端配置 同步于 {{now|date:'yyyy-MM-dd hh:mm:ss'}}</ons-list-item>\n    <ons-list-item modifier=\"longdivider\">老婆的饺子蘸料</ons-list-item>\n    <ons-list-item modifier=\"longdivider\">北京烤鸭完美组合</ons-list-item>\n  </ons-list>\n  <ons-list modifier=\"inset\">\n    <ons-list-item style=\"background-color: #eee;\" modifier=\"nodivider\"><div class=\"center\">云端存储配置</div>\n      <div class=\"right\">\n        <ons-fab modifier=\"mini\"><ons-icon icon=\"fa-plus\"></ons-icon></ons-fab>\n      </div>\n    </ons-list-item>\n    <ons-list-item modifier=\"longdivider\">老婆的饺子蘸料\n      <div class=\"right\">\n        <ons-switch [value]=\"true\"></ons-switch>\n      </div>\n    </ons-list-item>\n    <ons-list-item modifier=\"longdivider\">北京烤鸭完美组合\n      <div class=\"right\">\n        <ons-switch [value]=\"true\"></ons-switch>\n      </div>\n    </ons-list-item>\n    <ons-list-item modifier=\"longdivider\">五香牛肉-网红推荐\n      <div class=\"right\">\n        <ons-switch></ons-switch>\n      </div>\n    </ons-list-item>\n    <ons-list-item modifier=\"longdivider\">健康饮食推荐\n      <div class=\"right\">\n        <ons-switch></ons-switch>\n      </div>\n    </ons-list-item>\n  </ons-list>\n\n</ons-page>\n"
 
 /***/ }),
 
@@ -540,6 +540,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var ConfigComponent = /** @class */ (function () {
     function ConfigComponent() {
+        this.now = new Date();
     }
     ConfigComponent.prototype.ngOnInit = function () {
     };
@@ -576,7 +577,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  device works!\n</p>\n"
+module.exports = "<ons-page>\n  <ons-toolbar>\n    <div class=\"center\">酱料偏好配置</div>\n  </ons-toolbar>\n  <ons-list modifier=\"inset\">\n    <ons-list-header>智能设备端配置 同步于 {{now|date:'yyyy-MM-dd hh:mm:ss'}}</ons-list-header>\n    <ons-list-item modifier=\"longdivider\">老婆的饺子蘸料</ons-list-item>\n    <ons-list-item modifier=\"longdivider\">北京烤鸭完美组合</ons-list-item>\n  </ons-list>\n  <ons-list modifier=\"inset\">\n    <ons-list-header>云端存储配置</ons-list-header>\n    <ons-list-item modifier=\"longdivider\">老婆的饺子蘸料</ons-list-item>\n    <ons-list-item modifier=\"longdivider\">北京烤鸭完美组合</ons-list-item>\n  </ons-list>\n</ons-page>\n"
 
 /***/ }),
 
@@ -603,6 +604,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var DeviceComponent = /** @class */ (function () {
     function DeviceComponent() {
+        this.now = new Date();
     }
     DeviceComponent.prototype.ngOnInit = function () {
     };
