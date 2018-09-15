@@ -621,9 +621,9 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/yinzhennan/work/github/SauceX-App/node_modules/onsenui/css/onsenui.css */"./node_modules/onsenui/css/onsenui.css");
-__webpack_require__(/*! /Users/yinzhennan/work/github/SauceX-App/node_modules/onsenui/css/onsen-css-components.css */"./node_modules/onsenui/css/onsen-css-components.css");
-module.exports = __webpack_require__(/*! /Users/yinzhennan/work/github/SauceX-App/src/styles.css */"./src/styles.css");
+__webpack_require__(/*! G:\github\saucex\node_modules\onsenui\css\onsenui.css */"./node_modules/onsenui/css/onsenui.css");
+__webpack_require__(/*! G:\github\saucex\node_modules\onsenui\css\onsen-css-components.css */"./node_modules/onsenui/css/onsen-css-components.css");
+module.exports = __webpack_require__(/*! G:\github\saucex\src\styles.css */"./src/styles.css");
 
 
 /***/ })
