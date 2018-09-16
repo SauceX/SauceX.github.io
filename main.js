@@ -43,12 +43,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _cookbook_cookbook_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./cookbook/cookbook.component */ "./src/app/cookbook/cookbook.component.ts");
 /* harmony import */ var _cook_cook_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./cook/cook.component */ "./src/app/cook/cook.component.ts");
 /* harmony import */ var _config_detail_config_detail_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./config-detail/config-detail.component */ "./src/app/config-detail/config-detail.component.ts");
+/* harmony import */ var _market_market_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./market/market.component */ "./src/app/market/market.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -69,6 +71,7 @@ var routes = [
     { path: 'cookbook', component: _cookbook_cookbook_component__WEBPACK_IMPORTED_MODULE_7__["CookbookComponent"] },
     { path: 'cook', component: _cook_cook_component__WEBPACK_IMPORTED_MODULE_8__["CookComponent"] },
     { path: 'configDetail', component: _config_detail_config_detail_component__WEBPACK_IMPORTED_MODULE_9__["ConfigDetailComponent"] },
+    { path: 'market', component: _market_market_component__WEBPACK_IMPORTED_MODULE_10__["MarketComponent"] },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -174,12 +177,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _cook_cook_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./cook/cook.component */ "./src/app/cook/cook.component.ts");
 /* harmony import */ var _config_detail_config_detail_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./config-detail/config-detail.component */ "./src/app/config-detail/config-detail.component.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _market_market_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./market/market.component */ "./src/app/market/market.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -218,7 +223,8 @@ var AppModule = /** @class */ (function () {
                 _chart_chart_component__WEBPACK_IMPORTED_MODULE_13__["ChartComponent"],
                 _cookbook_cookbook_component__WEBPACK_IMPORTED_MODULE_16__["CookbookComponent"],
                 _cook_cook_component__WEBPACK_IMPORTED_MODULE_17__["CookComponent"],
-                _config_detail_config_detail_component__WEBPACK_IMPORTED_MODULE_18__["ConfigDetailComponent"]
+                _config_detail_config_detail_component__WEBPACK_IMPORTED_MODULE_18__["ConfigDetailComponent"],
+                _market_market_component__WEBPACK_IMPORTED_MODULE_20__["MarketComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -515,10 +521,10 @@ var ChartComponent = /** @class */ (function () {
         var xAxisData = [];
         var data1 = [];
         var data2 = [];
-        for (var i = 50; i < 100; i++) {
+        for (var i = 0; i < 50; i++) {
             var day = new Date();
-            day.setDate(day.getDate() - (100 - i));
-            xAxisData.push(day.getMonth() + '-' + day.getDate());
+            day.setDate(day.getDate() - (50 - i));
+            xAxisData.push((day.getMonth() + 1) + '-' + day.getDate());
             data1.push((Math.sin(i / 5) * (i / 5 - 10) + i / 6) * 5);
             data2.push((Math.cos(i / 5) * (i / 5 - 10) + i / 6) * 5);
         }
@@ -869,7 +875,7 @@ var ConfigComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "table.dataintable {\r\n  margin-top:15px;\r\n  border-collapse:collapse;\r\n  /*border:1px solid #aaa;*/\r\n  width:100%;\r\n}\r\n\r\ntable.dataintable th {\r\n  vertical-align:baseline;\r\n  padding:5px 15px 5px 6px;\r\n  background-color:#3F3F3F;\r\n  /*border:1px solid #3F3F3F;*/\r\n  text-align:left;\r\n  color:#fff;\r\n}\r\n\r\ntable.dataintable td {\r\n  vertical-align:text-top;\r\n  padding:6px 15px 6px 6px;\r\n  /*border:1px solid #aaa;*/\r\n}\r\n\r\ntable.dataintable tr:nth-child(odd) {\r\n  background-color:#F5F5F5;\r\n}\r\n\r\ntable.dataintable tr:nth-child(even) {\r\n  background-color:#fff;\r\n}\r\n\r\ntable.dataintable tr td:nth-child(2) {\r\n  text-align:right;\r\n}\r\n\r\ntable.dataintable pre {\r\n  width:auto;\r\n  margin:0;\r\n  padding:0;\r\n  border:0;\r\n  background-color:transparent;\r\n}\r\n\r\ntable.dataintable p {margin:0 0 2px 0;}\r\n\r\n.content{\r\n  background-color: white !important;\r\n}\r\n"
+module.exports = "table.dataintable {\r\n  margin-top:15px;\r\n  border-collapse:collapse;\r\n  /*border:1px solid #aaa;*/\r\n  width:100%;\r\n}\r\n\r\ntable.dataintable th {\r\n  vertical-align:baseline;\r\n  padding:5px 15px 5px 6px;\r\n  background-color:#3F3F3F;\r\n  /*border:1px solid #3F3F3F;*/\r\n  text-align:left;\r\n  color:#fff;\r\n}\r\n\r\ntable.dataintable td {\r\n  vertical-align:text-top;\r\n  padding:6px 15px 6px 6px;\r\n  /*border:1px solid #aaa;*/\r\n}\r\n\r\ntable.dataintable tr:nth-child(odd) {\r\n  background-color:#F5F5F5;\r\n}\r\n\r\ntable.dataintable tr:nth-child(even) {\r\n  background-color:#fff;\r\n}\r\n\r\ntable.dataintable tr td:nth-child(2) {\r\n  text-align:right;\r\n}\r\n\r\ntable.dataintable pre {\r\n  width:auto;\r\n  margin:0;\r\n  padding:0;\r\n  border:0;\r\n  background-color:transparent;\r\n}\r\n\r\ntable.dataintable p {margin:0 0 2px 0;}\r\n\r\n.content{\r\n  background-color: white !important;\r\n}\r\n\r\n.left{\r\n  margin-left: 20px;\r\n}\r\n"
 
 /***/ }),
 
@@ -972,7 +978,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<img style=\"width:100%\" [src]=\"'../../img/cookbook.jpg'\" usemap=\"#cookbookMap\">\n\n<map name=\"cookbookMap\">\n\n  <area shape=\"rect\" coords=\"11,158,236,504\" [routerLink]=\"'/cook'\" routerLinkActive='active'>\n\n</map>\n"
+module.exports = "<img style=\"width:100%\" [src]=\"'../../img/cookbook2.jpg'\" usemap=\"#cookbookMap\">\n\n<map name=\"cookbookMap\">\n\n  <area shape=\"rect\" coords=\"11,158,236,504\" [routerLink]=\"'/cook'\" routerLinkActive='active'>\n\n</map>\n"
 
 /***/ }),
 
@@ -1099,7 +1105,7 @@ module.exports = ".bg{\r\n  position: absolute;\r\n  top:0;\r\n  left:0;\r\n  he
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"bg\"></div>\n<ons-page [transparent]=\"true\" style=\"opacity: 0.8;\" class=\"main-page\">\n  <ons-toolbar>\n    <div class=\"center\">酱料罐信息</div>\n  </ons-toolbar>\n  <ons-list >\n    <ons-list-title>更新于 {{now|date:'yyyy-MM-dd hh:mm:ss'}}</ons-list-title>\n    <ons-list-item>\n      <div class=\"bottle-grid\">\n        <ul>\n          <li *ngFor=\"let bottle of bottles; let i = index\"><app-bottle [value]=\"bottle.value\" [color]=\"bottle.color\" [label]=\"bottle.label\"></app-bottle></li>\n        </ul>\n      </div>\n    </ons-list-item>\n  </ons-list>\n  <app-chart [(ngModel)]=\"chartDataArr\"></app-chart>\n</ons-page>\n"
+module.exports = "<div class=\"bg\"></div>\n<ons-page [transparent]=\"true\" style=\"opacity: 0.8;\" class=\"main-page\">\n  <ons-toolbar>\n    <div class=\"center\">信息统计</div>\n  </ons-toolbar>\n  <ons-list >\n    <ons-list-title>更新于 {{now|date:'yyyy-MM-dd hh:mm:ss'}}</ons-list-title>\n    <ons-list-item>\n      <div class=\"bottle-grid\">\n        <ul>\n          <li *ngFor=\"let bottle of bottles; let i = index\"><app-bottle [value]=\"bottle.value\" [color]=\"bottle.color\" [label]=\"bottle.label\"></app-bottle></li>\n        </ul>\n      </div>\n    </ons-list-item>\n  </ons-list>\n  <app-chart [(ngModel)]=\"chartDataArr\"></app-chart>\n  <div class=\"card card-accent-info\">\n    <div class=\"card-body\">\n      <div class=\"mt-4\">\n      <div echarts [options]=\"optionsSalt\" class=\"demo-chart\"></div>\n      </div>\n    </div>\n  </div>\n  <div class=\"card card-accent-info\">\n    <div class=\"card-body\">\n      <div class=\"mt-4\">\n        <div echarts [options]=\"optionsDiet\" class=\"demo-chart\"></div>\n      </div>\n    </div>\n  </div>\n  <div class=\"card card-accent-info\">\n    <div class=\"card-body\">\n      <h4 class=\"card-title\">健康饮食指导建议</h4>\n      <div class=\"mt-4\">\n        您摄入的碳水化合物比例过高, 容易引起肥胖和营养不良。建议适当增加蛋奶鱼肉等富含蛋白质的食物。钠盐的摄入量在合理范围内。如果从事体育锻炼或体力劳动, 可适当增加钠盐摄入。\n      </div>\n    </div>\n  </div>\n</ons-page>\n"
 
 /***/ }),
 
@@ -1116,6 +1122,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _bottle_bottle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../bottle/bottle */ "./src/app/bottle/bottle.ts");
 /* harmony import */ var _chart_ChartData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../chart/ChartData */ "./src/app/chart/ChartData.ts");
+/* harmony import */ var echarts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! echarts */ "./node_modules/echarts/dist/echarts.min.js");
+/* harmony import */ var echarts__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(echarts__WEBPACK_IMPORTED_MODULE_3__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1128,14 +1136,15 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var HomeComponent = /** @class */ (function () {
     function HomeComponent() {
         this.now = new Date();
         this.bottles = [
             { 'label': '酱油', 'color': _bottle_bottle__WEBPACK_IMPORTED_MODULE_1__["Color"].orange, 'value': 22 },
             { 'label': '醋', 'color': _bottle_bottle__WEBPACK_IMPORTED_MODULE_1__["Color"].green, 'value': 55 },
-            { 'label': '料酒', 'color': _bottle_bottle__WEBPACK_IMPORTED_MODULE_1__["Color"].red, 'value': 75 },
-            { 'label': '香油', 'color': _bottle_bottle__WEBPACK_IMPORTED_MODULE_1__["Color"].orange, 'value': 92 }
+            { 'label': '香油', 'color': _bottle_bottle__WEBPACK_IMPORTED_MODULE_1__["Color"].red, 'value': 75 },
+            { 'label': '料酒', 'color': _bottle_bottle__WEBPACK_IMPORTED_MODULE_1__["Color"].orange, 'value': 92 }
         ];
         this.chartDataArr = [];
     }
@@ -1155,6 +1164,107 @@ var HomeComponent = /** @class */ (function () {
         this.chartDataArr.push(this.chartData_01);
         this.chartDataArr.push(this.chartData_02);
         console.log(JSON.stringify(this.chartDataArr));
+        var xAxisData = [];
+        for (var i = 0; i < 20; i++) {
+            var day = new Date();
+            day.setDate(day.getDate() - (20 - i));
+            xAxisData.push((day.getMonth() + 1) + '-' + day.getDate());
+        }
+        this.optionsSalt = {
+            title: {
+                text: '最近20天钠盐摄入量(10mg)'
+            },
+            xAxis: {
+                data: xAxisData,
+                axisTick: {
+                    show: false
+                },
+                axisLine: {
+                    show: false
+                },
+                z: 10
+            },
+            yAxis: {
+                axisLine: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                axisLabel: {
+                    textStyle: {
+                        color: '#999'
+                    }
+                }
+            },
+            dataZoom: [
+                {
+                    type: 'inside'
+                }
+            ],
+            series: [
+                {
+                    type: 'bar',
+                    itemStyle: {
+                        normal: { color: 'rgba(0,0,0,0.05)' }
+                    },
+                    barGap: '-100%',
+                    barCategoryGap: '40%',
+                    data: [],
+                    animation: false
+                },
+                {
+                    type: 'bar',
+                    itemStyle: {
+                        normal: {
+                            color: new echarts__WEBPACK_IMPORTED_MODULE_3__["graphic"].LinearGradient(0, 0, 0, 1, [
+                                { offset: 0, color: '#83bff6' },
+                                { offset: 0.5, color: '#188df0' },
+                                { offset: 1, color: '#188df0' }
+                            ])
+                        },
+                        emphasis: {
+                            color: new echarts__WEBPACK_IMPORTED_MODULE_3__["graphic"].LinearGradient(0, 0, 0, 1, [
+                                { offset: 0, color: '#2378f7' },
+                                { offset: 0.7, color: '#2378f7' },
+                                { offset: 1, color: '#83bff6' }
+                            ])
+                        }
+                    },
+                    data: [220, 182, 191, 234, 290, 330, 310, 123, 442, 321, 90, 149, 210, 122, 133, 334, 198, 123, 125, 220]
+                }
+            ]
+        };
+        this.optionsDiet = {
+            title: {
+                text: '营养物质摄入比例',
+                subtext: '近5日平均值',
+                x: 'center'
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: '{a} <br/>{b} : {c} ({d}%)'
+            },
+            legend: {
+                x: 'center',
+                y: 'bottom',
+                data: ['rose1', 'rose2', 'rose3', 'rose4', 'rose5', 'rose6', 'rose7', 'rose8']
+            },
+            calculable: true,
+            series: [
+                {
+                    name: 'area',
+                    type: 'pie',
+                    radius: [30, 110],
+                    roseType: 'area',
+                    data: [
+                        { value: 500, name: '碳水化合物' },
+                        { value: 25, name: '脂肪' },
+                        { value: 15, name: '蛋白质' },
+                    ]
+                }
+            ]
+        };
     };
     HomeComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1233,6 +1343,69 @@ var IotService = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
     ], IotService);
     return IotService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/market/market.component.css":
+/*!*********************************************!*\
+  !*** ./src/app/market/market.component.css ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/market/market.component.html":
+/*!**********************************************!*\
+  !*** ./src/app/market/market.component.html ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ons-page>\n  <ons-toolbar>\n    <div class=\"center\">商城</div>\n  </ons-toolbar>\n  <img style=\"width:100%\" [src]=\"'../../img/market.PNG'\"/>\n</ons-page>\n"
+
+/***/ }),
+
+/***/ "./src/app/market/market.component.ts":
+/*!********************************************!*\
+  !*** ./src/app/market/market.component.ts ***!
+  \********************************************/
+/*! exports provided: MarketComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MarketComponent", function() { return MarketComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var MarketComponent = /** @class */ (function () {
+    function MarketComponent() {
+    }
+    MarketComponent.prototype.ngOnInit = function () {
+    };
+    MarketComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-market',
+            template: __webpack_require__(/*! ./market.component.html */ "./src/app/market/market.component.html"),
+            styles: [__webpack_require__(/*! ./market.component.css */ "./src/app/market/market.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], MarketComponent);
+    return MarketComponent;
 }());
 
 
@@ -1495,10 +1668,10 @@ var TabbarComponent = /** @class */ (function () {
     function TabbarComponent() {
         this.device = _device_device_component__WEBPACK_IMPORTED_MODULE_2__["DeviceComponent"];
         this.tabs = [
-            { path: 'cookbook', label: '首页', },
-            { path: 'home', label: '烹饪', },
+            { path: 'cookbook', label: '菜谱', },
+            { path: 'home', label: '状态', },
             { path: 'config', label: 'config', icon: 'fa-plus', },
-            { path: 'statistics', label: '商业', },
+            { path: 'market', label: '商城', },
             { path: 'settings', label: '我的', },
         ];
         this.material = ngx_onsenui__WEBPACK_IMPORTED_MODULE_1__["onsPlatform"].isAndroid();
@@ -1583,7 +1756,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! G:\github\saucex\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! G:\github\SauceX\src\main.ts */"./src/main.ts");
 
 
 /***/ })
