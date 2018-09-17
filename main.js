@@ -456,7 +456,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card card-accent-info\">\n  <div class=\"card-body\">\n    <h4 class=\"card-title\">最近50天酱料食用量(ml)</h4>\n    <div class=\"mt-4\">\n        <div echarts [options]=\"options\" class=\"demo-chart\"></div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"card card-accent-info\">\n  <div class=\"card-body\">\n    <h4 class=\"card-title\"><b>最近50天酱料食用量(ml)</b></h4>\n    <div class=\"mt-4\">\n        <div echarts [options]=\"options\" class=\"demo-chart\"></div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -1105,7 +1105,7 @@ module.exports = ".bg{\r\n  position: absolute;\r\n  top:0;\r\n  left:0;\r\n  he
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"bg\"></div>\n<ons-page [transparent]=\"true\" style=\"opacity: 0.8;\" class=\"main-page\">\n  <ons-toolbar>\n    <div class=\"center\">信息统计</div>\n  </ons-toolbar>\n  <ons-list >\n    <ons-list-title>更新于 {{now|date:'yyyy-MM-dd hh:mm:ss'}}</ons-list-title>\n    <ons-list-item>\n      <div class=\"bottle-grid\">\n        <ul>\n          <li *ngFor=\"let bottle of bottles; let i = index\"><app-bottle [value]=\"bottle.value\" [color]=\"bottle.color\" [label]=\"bottle.label\"></app-bottle></li>\n        </ul>\n      </div>\n    </ons-list-item>\n  </ons-list>\n  <app-chart [(ngModel)]=\"chartDataArr\"></app-chart>\n  <div class=\"card card-accent-info\">\n    <div class=\"card-body\">\n      <div class=\"mt-4\">\n      <div echarts [options]=\"optionsSalt\" class=\"demo-chart\"></div>\n      </div>\n    </div>\n  </div>\n  <div class=\"card card-accent-info\">\n    <div class=\"card-body\">\n      <div class=\"mt-4\">\n        <div echarts [options]=\"optionsDiet\" class=\"demo-chart\"></div>\n      </div>\n    </div>\n  </div>\n  <div class=\"card card-accent-info\">\n    <div class=\"card-body\">\n      <h4 class=\"card-title\">健康饮食指导建议</h4>\n      <div class=\"mt-4\">\n        您摄入的碳水化合物比例过高, 容易引起肥胖和营养不良。建议适当增加蛋奶鱼肉等富含蛋白质的食物。钠盐的摄入量在合理范围内。如果从事体育锻炼或体力劳动, 可适当增加钠盐摄入。\n      </div>\n    </div>\n  </div>\n</ons-page>\n"
+module.exports = "<div class=\"bg\"></div>\n<ons-page [transparent]=\"true\" style=\"opacity: 0.8;\" class=\"main-page\">\n  <ons-toolbar>\n    <div class=\"center\">信息统计</div>\n  </ons-toolbar>\n  <ons-list >\n    <ons-list-title>更新于 {{now|date:'yyyy-MM-dd HH:mm:ss'}}</ons-list-title>\n    <ons-list-item>\n      <div class=\"bottle-grid\">\n        <ul>\n          <li *ngFor=\"let bottle of bottles; let i = index\"><app-bottle [value]=\"bottle.value\" [color]=\"bottle.color\" [label]=\"bottle.label\"></app-bottle></li>\n        </ul>\n      </div>\n    </ons-list-item>\n  </ons-list>\n  <app-chart [(ngModel)]=\"chartDataArr\"></app-chart>\n  <div class=\"card card-accent-info\">\n    <div class=\"card-body\">\n      <div class=\"mt-4\">\n      <div echarts [options]=\"optionsSalt\" class=\"demo-chart\"></div>\n      </div>\n    </div>\n  </div>\n  <div class=\"card card-accent-info\">\n    <div class=\"card-body\">\n      <div class=\"mt-4\">\n        <div echarts [options]=\"optionsDiet\" class=\"demo-chart\"></div>\n      </div>\n    </div>\n  </div>\n  <div class=\"card card-accent-info\">\n    <div class=\"card-body\">\n      <h4 class=\"card-title\">健康小助手</h4>\n      <div class=\"mt-4\">\n        {{healthTip}}\n      </div>\n    </div>\n  </div>\n</ons-page>\n"
 
 /***/ }),
 
@@ -1120,10 +1120,7 @@ module.exports = "<div class=\"bg\"></div>\n<ons-page [transparent]=\"true\" sty
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeComponent", function() { return HomeComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _bottle_bottle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../bottle/bottle */ "./src/app/bottle/bottle.ts");
-/* harmony import */ var _chart_ChartData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../chart/ChartData */ "./src/app/chart/ChartData.ts");
-/* harmony import */ var echarts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! echarts */ "./node_modules/echarts/dist/echarts.min.js");
-/* harmony import */ var echarts__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(echarts__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _mock_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../mock.service */ "./src/app/mock.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1135,136 +1132,16 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
-
-
 var HomeComponent = /** @class */ (function () {
     function HomeComponent() {
         this.now = new Date();
-        this.bottles = [
-            { 'label': '酱油', 'color': _bottle_bottle__WEBPACK_IMPORTED_MODULE_1__["Color"].orange, 'value': 22 },
-            { 'label': '醋', 'color': _bottle_bottle__WEBPACK_IMPORTED_MODULE_1__["Color"].green, 'value': 55 },
-            { 'label': '香油', 'color': _bottle_bottle__WEBPACK_IMPORTED_MODULE_1__["Color"].red, 'value': 75 },
-            { 'label': '料酒', 'color': _bottle_bottle__WEBPACK_IMPORTED_MODULE_1__["Color"].orange, 'value': 92 }
-        ];
-        this.chartDataArr = [];
     }
     HomeComponent.prototype.ngOnInit = function () {
-        this.chartData_01 = new _chart_ChartData__WEBPACK_IMPORTED_MODULE_2__["ChartData"]();
-        this.chartData_01.name = '酱油01';
-        this.chartData_01.data = [];
-        for (var i = 0; i < 50; i++) {
-            this.chartData_01.data.push(Math.floor(Math.random() * 120));
-        }
-        this.chartData_02 = new _chart_ChartData__WEBPACK_IMPORTED_MODULE_2__["ChartData"]();
-        this.chartData_02.name = '醋02';
-        this.chartData_02.data = [];
-        for (var i = 0; i < 50; i++) {
-            this.chartData_02.data.push(Math.floor(Math.random() * 70));
-        }
-        this.chartDataArr.push(this.chartData_01);
-        this.chartDataArr.push(this.chartData_02);
-        console.log(JSON.stringify(this.chartDataArr));
-        var xAxisData = [];
-        for (var i = 0; i < 20; i++) {
-            var day = new Date();
-            day.setDate(day.getDate() - (20 - i));
-            xAxisData.push((day.getMonth() + 1) + '-' + day.getDate());
-        }
-        this.optionsSalt = {
-            title: {
-                text: '最近20天钠盐摄入量(10mg)'
-            },
-            xAxis: {
-                data: xAxisData,
-                axisTick: {
-                    show: false
-                },
-                axisLine: {
-                    show: false
-                },
-                z: 10
-            },
-            yAxis: {
-                axisLine: {
-                    show: false
-                },
-                axisTick: {
-                    show: false
-                },
-                axisLabel: {
-                    textStyle: {
-                        color: '#999'
-                    }
-                }
-            },
-            dataZoom: [
-                {
-                    type: 'inside'
-                }
-            ],
-            series: [
-                {
-                    type: 'bar',
-                    itemStyle: {
-                        normal: { color: 'rgba(0,0,0,0.05)' }
-                    },
-                    barGap: '-100%',
-                    barCategoryGap: '40%',
-                    data: [],
-                    animation: false
-                },
-                {
-                    type: 'bar',
-                    itemStyle: {
-                        normal: {
-                            color: new echarts__WEBPACK_IMPORTED_MODULE_3__["graphic"].LinearGradient(0, 0, 0, 1, [
-                                { offset: 0, color: '#83bff6' },
-                                { offset: 0.5, color: '#188df0' },
-                                { offset: 1, color: '#188df0' }
-                            ])
-                        },
-                        emphasis: {
-                            color: new echarts__WEBPACK_IMPORTED_MODULE_3__["graphic"].LinearGradient(0, 0, 0, 1, [
-                                { offset: 0, color: '#2378f7' },
-                                { offset: 0.7, color: '#2378f7' },
-                                { offset: 1, color: '#83bff6' }
-                            ])
-                        }
-                    },
-                    data: [220, 182, 191, 234, 290, 330, 310, 123, 442, 321, 90, 149, 210, 122, 133, 334, 198, 123, 125, 220]
-                }
-            ]
-        };
-        this.optionsDiet = {
-            title: {
-                text: '营养物质摄入比例',
-                subtext: '近5日平均值',
-                x: 'center'
-            },
-            tooltip: {
-                trigger: 'item',
-                formatter: '{a} <br/>{b} : {c} ({d}%)'
-            },
-            legend: {
-                x: 'center',
-                y: 'bottom',
-                data: ['rose1', 'rose2', 'rose3', 'rose4', 'rose5', 'rose6', 'rose7', 'rose8']
-            },
-            calculable: true,
-            series: [
-                {
-                    name: 'area',
-                    type: 'pie',
-                    radius: [30, 110],
-                    roseType: 'area',
-                    data: [
-                        { value: 500, name: '碳水化合物' },
-                        { value: 25, name: '脂肪' },
-                        { value: 15, name: '蛋白质' },
-                    ]
-                }
-            ]
-        };
+        this.bottles = _mock_service__WEBPACK_IMPORTED_MODULE_1__["MockService"].getBottleStatus();
+        this.chartDataArr = _mock_service__WEBPACK_IMPORTED_MODULE_1__["MockService"].getCostHis();
+        this.optionsSalt = _mock_service__WEBPACK_IMPORTED_MODULE_1__["MockService"].getOptionsSalt();
+        this.optionsDiet = _mock_service__WEBPACK_IMPORTED_MODULE_1__["MockService"].getOptionsDiet();
+        this.healthTip = _mock_service__WEBPACK_IMPORTED_MODULE_1__["MockService"].getHealthTip();
     };
     HomeComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1423,6 +1300,10 @@ var MarketComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MockService", function() { return MockService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var echarts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! echarts */ "./node_modules/echarts/dist/echarts.min.js");
+/* harmony import */ var echarts__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(echarts__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _chart_ChartData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./chart/ChartData */ "./src/app/chart/ChartData.ts");
+/* harmony import */ var _bottle_bottle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./bottle/bottle */ "./src/app/bottle/bottle.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1433,6 +1314,9 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
 var MockService = /** @class */ (function () {
     function MockService() {
     }
@@ -1442,6 +1326,143 @@ var MockService = /** @class */ (function () {
     };
     MockService.getCloudConfigs = function () {
         return MockService_1.cloudConfigs;
+    };
+    MockService.getBottleStatus = function () {
+        return [
+            { 'label': '酱油', 'color': _bottle_bottle__WEBPACK_IMPORTED_MODULE_3__["Color"].orange, 'value': 22 },
+            { 'label': '醋', 'color': _bottle_bottle__WEBPACK_IMPORTED_MODULE_3__["Color"].green, 'value': 55 },
+            { 'label': '香油', 'color': _bottle_bottle__WEBPACK_IMPORTED_MODULE_3__["Color"].red, 'value': 75 },
+            { 'label': '料酒', 'color': _bottle_bottle__WEBPACK_IMPORTED_MODULE_3__["Color"].orange, 'value': 92 }
+        ];
+    };
+    MockService.getCostHis = function () {
+        var chartDataArr = [];
+        var chartData_01;
+        var chartData_02;
+        chartData_01 = new _chart_ChartData__WEBPACK_IMPORTED_MODULE_2__["ChartData"]();
+        chartData_01.name = '酱油01';
+        chartData_01.data = [];
+        for (var i = 0; i < 50; i++) {
+            chartData_01.data.push(Math.floor(Math.random() * 120));
+        }
+        chartData_02 = new _chart_ChartData__WEBPACK_IMPORTED_MODULE_2__["ChartData"]();
+        chartData_02.name = '醋02';
+        chartData_02.data = [];
+        for (var i = 0; i < 50; i++) {
+            chartData_02.data.push(Math.floor(Math.random() * 70));
+        }
+        chartDataArr.push(chartData_01);
+        chartDataArr.push(chartData_02);
+        console.log(JSON.stringify(chartDataArr));
+        return chartDataArr;
+    };
+    MockService.getOptionsDiet = function () {
+        return {
+            title: {
+                text: '营养物质摄入比例',
+                subtext: '近5日平均值',
+                x: 'center'
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: '{a} <br/>{b} : {c} ({d}%)'
+            },
+            legend: {
+                x: 'center',
+                y: 'bottom',
+                data: ['rose1', 'rose2', 'rose3', 'rose4', 'rose5', 'rose6', 'rose7', 'rose8']
+            },
+            calculable: true,
+            series: [
+                {
+                    name: '日均摄入(g)',
+                    type: 'pie',
+                    radius: [30, 110],
+                    roseType: 'area',
+                    data: [
+                        { value: 500, name: '碳水化合物' },
+                        { value: 25, name: '脂肪' },
+                        { value: 15, name: '蛋白质' },
+                    ]
+                }
+            ]
+        };
+    };
+    MockService.getOptionsSalt = function () {
+        var xAxisData = [];
+        for (var i = 0; i < 20; i++) {
+            var day = new Date();
+            day.setDate(day.getDate() - (20 - i));
+            xAxisData.push((day.getMonth() + 1) + '-' + day.getDate());
+        }
+        return {
+            title: {
+                text: '最近20天钠盐摄入量(10mg)'
+            },
+            xAxis: {
+                data: xAxisData,
+                axisTick: {
+                    show: false
+                },
+                axisLine: {
+                    show: false
+                },
+                z: 10
+            },
+            yAxis: {
+                axisLine: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                axisLabel: {
+                    textStyle: {
+                        color: '#999'
+                    }
+                }
+            },
+            dataZoom: [
+                {
+                    type: 'inside'
+                }
+            ],
+            series: [
+                {
+                    type: 'bar',
+                    itemStyle: {
+                        normal: { color: 'rgba(0,0,0,0.05)' }
+                    },
+                    barGap: '-100%',
+                    barCategoryGap: '40%',
+                    data: [],
+                    animation: false
+                },
+                {
+                    type: 'bar',
+                    itemStyle: {
+                        normal: {
+                            color: new echarts__WEBPACK_IMPORTED_MODULE_1__["graphic"].LinearGradient(0, 0, 0, 1, [
+                                { offset: 0, color: '#83bff6' },
+                                { offset: 0.5, color: '#188df0' },
+                                { offset: 1, color: '#188df0' }
+                            ])
+                        },
+                        emphasis: {
+                            color: new echarts__WEBPACK_IMPORTED_MODULE_1__["graphic"].LinearGradient(0, 0, 0, 1, [
+                                { offset: 0, color: '#2378f7' },
+                                { offset: 0.7, color: '#2378f7' },
+                                { offset: 1, color: '#83bff6' }
+                            ])
+                        }
+                    },
+                    data: [220, 182, 191, 234, 290, 330, 310, 123, 442, 321, 90, 149, 210, 122, 133, 334, 198, 123, 125, 220]
+                }
+            ]
+        };
+    };
+    MockService.getHealthTip = function () {
+        return '您摄入的碳水化合物比例过高, 容易引起肥胖和营养不良。建议适当增加蛋奶鱼肉等富含蛋白质的食物。钠盐的摄入量在合理范围内。如果从事体育锻炼或体力劳动, 可适当增加钠盐摄入。';
     };
     MockService.iotConfigs = [
         { name: '默认配置', values: [20, 5, 0, 0] },
